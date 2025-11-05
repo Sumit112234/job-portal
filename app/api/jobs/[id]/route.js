@@ -24,6 +24,7 @@ export async function GET(req, { params }) {
     const job = await Job.findById(para.id)
       .populate('company', 'name description logo website location size industry');
 
+      
     if (!job) {
       return NextResponse.json(
         { error: 'Job not found' },
